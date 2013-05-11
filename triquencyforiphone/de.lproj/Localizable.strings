@@ -1,0 +1,40 @@
+/*
+ Localizable.strings
+ triquencyforiphone
+ 
+ Created by Christoph Wolff on 06.05.13.
+ Copyright (c) 2013 Christoph Wolff. All rights reserved.
+ */
+
+
+
+Tweetpost = "Ich höre Campus Radio Triquency und es läuft %@ via @triquency";
+
+
+FBPost = "Ich höre Campus Radio Triquency und es läuft %@ via fb.com/triquency";
+
+fromto = "%@ bis %@";
+
+networkerrorTitle = "Netzwerk Fehler";
+
+networkerror = "Du brauchst eine Internet Verbindung.";
+
+close = "Schließen";
+
+watchout = "Achtung!";
+
+nowifi = "Du hast keine WiFi Verbindung! Könnte teuer werden!";
+
+nopost = "Du kannst leider nicht auf Facebook posten. Bitte richte einen Facebook Account ein.";
+
+notweet = "Du kannst leider nicht auf twitter posten. Bitte richte einen Twitter Account ein.";
+
+caladd ="Diese Sendung zum Kalender hinzufügen?";
+
+calno ="Auf keinen Fall!";
+
+calyes ="Ja, bitte.";
+
+caldone = "Eingetragen.";
+
+Program = "Programm";

@@ -1,0 +1,38 @@
+/*
+ Localizable.strings
+ triquencyforiphone
+ 
+ Created by Christoph Wolff on 06.05.13.
+ Copyright (c) 2013 Christoph Wolff. All rights reserved.
+ */
+
+Tweetpost = "Now listening to Campus Radio Triquency with %@ via @triquency";
+
+
+FBPost = "Now listening to Campus Radio Triquency with %@ via fb.com/triquency";
+
+fromto = "%@ to %@";
+
+networkerrorTitle ="Network Error";
+
+networkerror = "You need to be connected to the Internet";
+
+close = "close";
+
+watchout = "Watch out!";
+
+nowifi = "You are not connected to a wifi Network. Could be very expensive. ";
+
+nopost = "You can't send a Post right now, make sure your device has an internet connection and you have Facebook account setup";
+
+notweet = "You can't send a tweet right now, make sure your device has an internet connection and you have at least one Twitter account setup";
+
+caladd ="Add this show to your Calendar?";
+
+calno ="No, thank you.";
+
+calyes ="Yes, please";
+
+caldone = "Complete!!!!!!";
+
+Program = "Program";
