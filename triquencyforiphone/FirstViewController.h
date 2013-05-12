@@ -12,7 +12,7 @@
 
 
 
-@interface FirstViewController : UIViewController{
+@interface FirstViewController : UIViewController<AVAudioSessionDelegate>{
     
     float radians;
     float degrees;

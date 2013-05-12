@@ -69,11 +69,22 @@ bool helper = true;
         [fb_btn setHidden:TRUE];
     }
     
+    float osVersion = [[UIDevice currentDevice].systemVersion floatValue];
+    if (osVersion >=6.0)
+    {
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playafterphonecall:) name:AVAudioSessionInterruptionNotification object:nil];
+    }
+    else
+    {
+        AVAudioSession* session = [AVAudioSession sharedInstance];
+        session.delegate = self;
+    }
     
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
     
-    
+     
     UInt32 sessionCategory = kAudioSessionCategory_MediaPlayback;
     AudioSessionSetProperty (kAudioSessionProperty_AudioCategory, sizeof (sessionCategory), &sessionCategory);
     
@@ -106,7 +117,25 @@ bool helper = true;
 
     
 }
+-(void)playafterphonecall:(NSNotification*)notification{
+    NSUInteger type = [[[notification userInfo] objectForKey:AVAudioSessionInterruptionTypeKey] unsignedIntegerValue];
+    switch (type) {
+        case AVAudioSessionInterruptionTypeBegan:
+             NSLog(@"radiosound pause");
+            break;
+        case AVAudioSessionInterruptionTypeEnded:
+            if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateActive) {
+               
+            [radiosound play];
+                 NSLog(@"radiosound play");
+            } else {
+                // Have to wait for the app to become active, otherwise
+                // the audio session won’t resume correctly.
+            }
+            break;
+    }
 
+}
 - (void)appDidFinishedLauning:(NSNotification *)notification {
     //Update Current Track label with Timer
     
@@ -127,7 +156,7 @@ bool helper = true;
             
         // share instance for audio remote control
         // Registers this class as the delegate of the audio session.
-        [[AVAudioSession sharedInstance] setDelegate: nil];
+        [[AVAudioSession sharedInstance] setDelegate: self];
         
         // Allow the app sound to continue to play when the screen is locked.
         [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];  
