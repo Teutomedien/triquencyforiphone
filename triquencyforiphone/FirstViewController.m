@@ -231,6 +231,8 @@ bool helper = true;
         loading.alpha = 1;
         playpausebutton.alpha = 0;
         
+        
+        
     } else {
 
         //Remove all Animations when playing and hide the second animation cycle
@@ -291,7 +293,7 @@ bool helper = true;
     fullRotationouta.repeatCount = 200;
     fullRotationouta.duration = 1;
     
-    
+     [streamquali setUserInteractionEnabled:NO];
     
     [innerLoadingImage setHidden:false];
     
@@ -356,6 +358,7 @@ bool helper = true;
     [loading stopAnimating];
     [loading hidesWhenStopped];
     loading.alpha = 0;
+    [streamquali setUserInteractionEnabled:YES];
     
     [self.radiosound pause];
     
@@ -376,11 +379,13 @@ bool helper = true;
     if (radiosound == nil) {
        
         [self playCurrentTrack];
+    
         
 	}
 	else{
         
 		[self pauseCurrentTrack];
+
         
 	}
     
