@@ -293,7 +293,8 @@ bool helper = true;
     fullRotationouta.repeatCount = 200;
     fullRotationouta.duration = 1;
     
-     [streamquali setUserInteractionEnabled:NO];
+    streamquali.alpha = 0.5;
+    [streamquali setUserInteractionEnabled:NO];
     
     [innerLoadingImage setHidden:false];
     
@@ -353,11 +354,13 @@ bool helper = true;
 -(void)pauseCurrentTrack
 {
     
-         [bigPlayBtn.layer removeAllAnimations];
+    [bigPlayBtn.layer removeAllAnimations];
     [timer invalidate];
     [loading stopAnimating];
     [loading hidesWhenStopped];
     loading.alpha = 0;
+    
+    streamquali.alpha = 1;
     [streamquali setUserInteractionEnabled:YES];
     
     [self.radiosound pause];
@@ -365,9 +368,6 @@ bool helper = true;
     [self.playpausebutton setImage:[UIImage imageNamed:@"myplaybutton.png"] forState:UIControlStateNormal];
     
     [self.bigPlayBtn setImage:[UIImage imageNamed:@"play_btn.png"] forState:UIControlStateNormal];
-    
-    NSLog(@"pause");
-    
 
 	radiosound = nil;
 
