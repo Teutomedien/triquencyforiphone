@@ -670,8 +670,8 @@
 		59697F8815C180E400B3650C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Christoph Wolff (47PT4L2R6D)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christoph Wolff (47PT4L2R6D)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Christoph Wolff (RUU9KS7DJV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Christoph Wolff (RUU9KS7DJV)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -683,8 +683,8 @@
 				MACH_O_TYPE = mh_execute;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Triquency;
-				PROVISIONING_PROFILE = "7F546257-00B2-4935-A928-D6AA4694E060";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7F546257-00B2-4935-A928-D6AA4694E060";
+				PROVISIONING_PROFILE = "AACF9997-6EF2-4193-ABB7-DE39967094E9";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AACF9997-6EF2-4193-ABB7-DE39967094E9";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -693,8 +693,8 @@
 		59697F8915C180E400B3650C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Christoph Wolff (47PT4L2R6D)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christoph Wolff (47PT4L2R6D)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Christoph Wolff (RUU9KS7DJV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Christoph Wolff (RUU9KS7DJV)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -706,8 +706,8 @@
 				MACH_O_TYPE = mh_execute;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Triquency;
-				PROVISIONING_PROFILE = "7F546257-00B2-4935-A928-D6AA4694E060";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7F546257-00B2-4935-A928-D6AA4694E060";
+				PROVISIONING_PROFILE = "AACF9997-6EF2-4193-ABB7-DE39967094E9";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AACF9997-6EF2-4193-ABB7-DE39967094E9";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

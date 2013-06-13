@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -701,6 +701,68 @@ Haftungshinweis: Trotz sorgfältiger inhaltlicher Kontrolle, übernehmen wir kei
         <image name="reload.png" width="52" height="52"/>
         <image name="twitter-bird-light-bgs.png" width="300" height="300"/>
     </resources>
+    <classes>
+        <class className="FacebookViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FacebookViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backwardPressed:"/>
+                <relationship kind="action" name="forwardpressed:"/>
+                <relationship kind="action" name="reloadPressed:"/>
+                <relationship kind="outlet" name="Facebook" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+            </relationships>
+        </class>
+        <class className="FirstViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="playpause:"/>
+                <relationship kind="action" name="postPressed:"/>
+                <relationship kind="action" name="tweetPressed:"/>
+                <relationship kind="outlet" name="UIBGImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="bigPlayBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttomToolbar" candidateClass="UIToolbar"/>
+                <relationship kind="outlet" name="currentTrackTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="fb_btn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="innerLoadingImage" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="loading" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="loadingTrackActivity" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="navBarTools" candidateClass="UINavigationBar"/>
+                <relationship kind="outlet" name="playpausebutton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="streamquali" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="twitter_btn" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="InfoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfoViewController.h"/>
+        </class>
+        <class className="ProgrammViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProgrammViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="outlet" name="loadingProgramm" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="myProgrammTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="TwitterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TwitterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backwardsPressed:"/>
+                <relationship kind="action" name="forwardPressed:"/>
+                <relationship kind="action" name="reloadPressed:"/>
+                <relationship kind="outlet" name="Twitter" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+            </relationships>
+        </class>
+        <class className="playlistViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/playlistViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="xPlaylistPressed:"/>
+                <relationship kind="outlet" name="loadingPlaylist" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="myTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="playlistLoader" candidateClass="UIActivityIndicatorView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

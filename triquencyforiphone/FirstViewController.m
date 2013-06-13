@@ -391,13 +391,11 @@ bool helper = true;
     if (NSClassFromString(@"SLRequest") != Nil) {
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
-        SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-        
-        
+        SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];        
         
         [tweetSheet setInitialText:[NSString stringWithFormat:NSLocalizedString(@"Tweetpost",nil),postCurrentTrack]];
         
-        [self presentViewController:tweetSheet animated:YES completion:nil];
+        [self presentViewController:tweetSheet animated:YES completion:Nil];
     }
     else
     {
@@ -444,39 +442,38 @@ bool helper = true;
 -(void) updatecurrenttrack{
     
     
-    NSString *urlAsString = @"http://user7.webspace.hs-owl.de/triquency.php";
-    NSURL *url = [NSURL URLWithString:urlAsString];
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-    
-    
-    [NSURLConnection
-     sendAsynchronousRequest:urlRequest
-     queue:[[NSOperationQueue alloc] init]
-     completionHandler:^(NSURLResponse *response,
-                         NSData *data,
-                         NSError *error)
-     {
-         
-         if (error == nil)
-         {
-             postCurrentTrack = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-             currentTrackTitle.text = postCurrentTrack;
-             [loadingTrackActivity stopAnimating];
-         }
-         else if ([data length] == 0 && error == nil)
-         {
-             NSLog(@"Nothing was downloaded.");
-         }
-         else if (error != nil){
-             NSLog(@"Error = %@", error);
-         }
-         
-     }];
+    [self LoadtitleData];
     
     
 }
 
 
+-(void)LoadtitleData
+{
+    NSOperationQueue *queue =[[NSOperationQueue alloc]init];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:  [NSURL URLWithString:@"http://user7.webspace.hs-owl.de/triquency.php"]];
+    [NSURLConnection sendAsynchronousRequest: urlRequest queue: queue completionHandler: ^(NSURLResponse *response, NSData *data, NSError *error)
+     {
+         if(!error)
+         {
+             [self performSelectorOnMainThread:@selector(fetchedData:) withObject:data waitUntilDone:NO];
+             
+             
+         }
+         else
+         {
+             //Error - Grabbing this with the reachability Class
+         }
+     }];
+    
+}
 
+
+- (void)fetchedData:(NSData *)responseData {
+    
+    postCurrentTrack = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+    currentTrackTitle.text = postCurrentTrack;
+    [loadingTrackActivity stopAnimating];
+}
 
 @end
